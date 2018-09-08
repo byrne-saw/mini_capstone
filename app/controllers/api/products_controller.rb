@@ -2,6 +2,8 @@ class Api::ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    sort_attribute = params[:sort]
+    sort_order = params[:sort_order]
     
 
     search_term = params[:search]
@@ -12,8 +14,7 @@ class Api::ProductsController < ApplicationController
                                   )
     end
 
-    sort_attribute = params[:sort]
-    sort_order = params[:sort_order]
+
     if sort_attribute && sort_order
       @products = @products.order(sort_attribute => sort_order)
     elsif sort_attribute
