@@ -7,7 +7,6 @@ class Product < ApplicationRecord
   validates :description, length: { maximum: 200 }
 
 
-  validates :image_url, uniqueness: true
   validates :price, presence: true
   validates :price, numericality: { greater_than: 0 }
   # validates :price, numericality: true # ,redundant becasue of the line above 
@@ -15,9 +14,13 @@ class Product < ApplicationRecord
   belongs_to :supplier
   has_many :images
   has_many :orders
+  has_many :product_categories
+  has_many :categories, through: :product_categories
+
   # def supplier
   #   Supplier.find_by(id: supplier_id)
   # end
+
 
   def is_discounted?
     price < 4

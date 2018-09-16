@@ -11,7 +11,6 @@ class Api::OrdersController < ApplicationController
                       user_id: current_user.id,
                       product_id: params[:product_id],
                       quantity: params[:quantity],
-
                       )
 
     @order.build_totals    
