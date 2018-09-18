@@ -17,6 +17,10 @@ class Product < ApplicationRecord
   has_many :product_categories
   has_many :categories, through: :product_categories
 
+  has_many :carted_products
+  has_many :orders, through: :carted_products
+  # has_many :users, through: :carted_products
+
   # def supplier
   #   Supplier.find_by(id: supplier_id)
   # end

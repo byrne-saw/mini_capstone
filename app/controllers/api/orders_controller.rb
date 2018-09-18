@@ -7,10 +7,13 @@ class Api::OrdersController < ApplicationController
   end
 
   def create
+    carted_products = current_user.carted_products.where(status: "carted")
+    
+    
     @order = Order.new(
                       user_id: current_user.id,
-                      product_id: params[:product_id],
-                      quantity: params[:quantity],
+                      # product_id: params[:product_id],
+                      # quantity: params[:quantity]
                       )
 
     @order.build_totals    
