@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show]
+  # before_action :authenticate_admin, except: [:index, :show]
 
   def index
     sort_attribute = params[:sort]
@@ -39,7 +39,8 @@ class Api::ProductsController < ApplicationController
                             name: params[:name],
                             price: params[:price],
                             description: params[:description],
-                            image_url: params[:image_url]
+                            supplier_id: params[:supplier_id],
+                            # image_url: params[:image_url]
                             )
       if @product.save
         render 'show.json.jbuilder'
