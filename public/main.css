@@ -1,0 +1,9 @@
+body {
+  background-image: url("memphis-colorful.png");
+  font-family: "Hoefler Text","Baskerville Old Face",Garamond,"Times New Roman",serif;
+
+  }
+
+.card-top-spacing {
+  margin-top: 20px;
+}
