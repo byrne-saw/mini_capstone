@@ -1,4 +1,4 @@
-class Api::OrdersController < ApplicationController
+dclass Api::OrdersController < ApplicationController
   before_action :authenticate_user
 
   def index
